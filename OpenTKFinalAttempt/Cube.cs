@@ -34,9 +34,9 @@ namespace OpenTKFinalAttempt
 
         public Cube()
         {
-            VertCount = 8;
+            VertCount =/* 8 */ 24;
             IndiceCount = 36;
-            ColorDataCount = 8;
+            ColorDataCount = /*8*/ 24;
         }
         private Vector3[] ColorsOfCube = new Vector3[]  {
                 //left
@@ -90,6 +90,7 @@ namespace OpenTKFinalAttempt
                 new Vector3(0.5f, -0.5f,  -0.5f),
                 new Vector3(0.5f, 0.5f,  -0.5f),
                 new Vector3(-0.5f, 0.5f,  -0.5f),
+
                 new Vector3(-0.5f, -0.5f,  0.5f),
                 new Vector3(0.5f, -0.5f,  0.5f),
                 new Vector3(0.5f, 0.5f,  0.5f),
