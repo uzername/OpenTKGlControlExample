@@ -288,5 +288,19 @@ namespace OpenTKFinalAttempt
                 glControl1.Invalidate();
             }
         }
+
+        private void glControl1_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.W: {    cam.Move(0f, 0.1f, 0f); glControl1.Invalidate(); break;      }
+                case Keys.S: {    cam.Move(0f, -0.1f, 0f); glControl1.Invalidate(); break;      }
+                case Keys.A: {    cam.Move(-0.1f, 0f, 0f); glControl1.Invalidate(); break; }
+                case Keys.D: { cam.Move(0.1f, 0f, 0f); glControl1.Invalidate(); break; }
+                case Keys.Q: { cam.Move(0f, 0f, 0.1f); glControl1.Invalidate(); break; }
+                case Keys.E: { cam.Move(0f, 0f, -0.1f); glControl1.Invalidate(); break; }
+                default: break;
+            }
+        }
     }
 }
