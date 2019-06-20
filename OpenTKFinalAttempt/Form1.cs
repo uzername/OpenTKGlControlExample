@@ -303,6 +303,15 @@ namespace OpenTKFinalAttempt
             }
         }
 
+        private void btnLeft_Click(object sender, EventArgs e)
+        {
+            if (sender == btnLeft)
+                MessageBox.Show("left");
+            if(sender==btnRight)
+                MessageBox.Show("right");
+
+        }
+
         //
         // some part of useless code
     }
