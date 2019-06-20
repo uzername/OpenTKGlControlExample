@@ -302,5 +302,8 @@ namespace OpenTKFinalAttempt
                 default: break;
             }
         }
+
+        //
+        // some part of useless code
     }
 }
