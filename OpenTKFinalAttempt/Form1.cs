@@ -114,6 +114,7 @@ namespace OpenTKFinalAttempt
         private void ColorControlForSelect1_eventForColorChangedHandler(Color in_Color, int index)
         {
             (objects[0] as Cube).setColorOfCube(new Vector3(in_Color.R / 255.0f, in_Color.G / 255.0f, in_Color.B / 255.0f), Cube.convertIndexToCubeside(index));
+            this.glControl1.Invalidate();
         }
 
         void initProgram()
@@ -199,7 +200,7 @@ namespace OpenTKFinalAttempt
             GL.VertexAttribPointer(attribute_vcol, 3, VertexAttribPointerType.Float, true, 0, 0);
 
             objects[0].Position = new Vector3(0.3f, -0.5f + (float)Math.Sin(time), -3.0f);
-            objects[0].Rotation = new Vector3(0.55f * time, 0.25f * time, 0);
+//            objects[0].Rotation = new Vector3(0.55f * time, 0.25f * time, 0);
             objects[0].Scale = new Vector3(0.5f, 0.5f, 0.5f);
 
             objects[1].Position = new Vector3(-1f, 0.5f + (float)Math.Cos(time), -2.0f);
@@ -306,10 +307,10 @@ namespace OpenTKFinalAttempt
         private void btnLeft_Click(object sender, EventArgs e)
         {
             if (sender == btnLeft)
-                MessageBox.Show("left");
-            if(sender==btnRight)
-                MessageBox.Show("right");
-
+                objects[0].Rotation = new Vector3(0.0f, objects[0].Rotation.Y - MathHelper.DegreesToRadians(10), 0);
+            if (sender==btnRight)
+                objects[0].Rotation = new Vector3(0.0f, objects[0].Rotation.Y + MathHelper.DegreesToRadians(10), 0);
+            this.glControl1.Invalidate();
         }
 
         //

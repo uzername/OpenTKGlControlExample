@@ -70,34 +70,7 @@ namespace OpenTKFinalAttempt
                 new Vector3(1f,0f,1f),
                 new Vector3(1f,0f,1f)
             };
-        /// <summary>
-        /// set color of cube side
-        /// </summary>
-        /// <param name="in_color">a color to set up, Vector3 should have 3 components, between 0 and 1</param>
-        /// <param name="in_targetSide">side of cube to be colored</param>
-        public void setColorOfCube(Vector3 in_color,cubeside in_targetSide)
-        {
-            ColorsOfCube[(int)in_targetSide] = in_color;
-            ColorsOfCube[(int)in_targetSide+1] = in_color;
-            ColorsOfCube[(int)in_targetSide+2] = in_color;
-            ColorsOfCube[(int)in_targetSide+3] = in_color;
-        }
-        public override Vector3[] GetVerts()
-        {
-            /*
-            return new Vector3[] {
-                new Vector3(-0.5f, -0.5f,  -0.5f),
-                new Vector3(0.5f, -0.5f,  -0.5f),
-                new Vector3(0.5f, 0.5f,  -0.5f),
-                new Vector3(-0.5f, 0.5f,  -0.5f),
-
-                new Vector3(-0.5f, -0.5f,  0.5f),
-                new Vector3(0.5f, -0.5f,  0.5f),
-                new Vector3(0.5f, 0.5f,  0.5f),
-                new Vector3(-0.5f, 0.5f,  0.5f),
-            };
-            */
-            return new Vector3[] {
+        private Vector3[] CoordinatesOfCube = new Vector3[] {
                 //left side
                 new Vector3(-0.5f, -0.5f,  -0.5f), //0 :: 0
                 new Vector3(0.5f, -0.5f,  -0.5f),  //1 :: 1
@@ -129,6 +102,38 @@ namespace OpenTKFinalAttempt
                 new Vector3(-0.5f, -0.5f,  0.5f),  //4 :: 22
                 new Vector3(0.5f, -0.5f,  0.5f),   //5 :: 23
             };
+    public void performRotationOfCube (double in_angle)
+        {
+
+        }
+    /// <summary>
+    /// set color of cube side
+    /// </summary>
+    /// <param name="in_color">a color to set up, Vector3 should have 3 components, between 0 and 1</param>
+    /// <param name="in_targetSide">side of cube to be colored</param>
+    public void setColorOfCube(Vector3 in_color,cubeside in_targetSide)
+        {
+            ColorsOfCube[(int)in_targetSide] = in_color;
+            ColorsOfCube[(int)in_targetSide+1] = in_color;
+            ColorsOfCube[(int)in_targetSide+2] = in_color;
+            ColorsOfCube[(int)in_targetSide+3] = in_color;
+        }
+        public override Vector3[] GetVerts()
+        {
+            /*
+            return new Vector3[] {
+                new Vector3(-0.5f, -0.5f,  -0.5f),
+                new Vector3(0.5f, -0.5f,  -0.5f),
+                new Vector3(0.5f, 0.5f,  -0.5f),
+                new Vector3(-0.5f, 0.5f,  -0.5f),
+
+                new Vector3(-0.5f, -0.5f,  0.5f),
+                new Vector3(0.5f, -0.5f,  0.5f),
+                new Vector3(0.5f, 0.5f,  0.5f),
+                new Vector3(-0.5f, 0.5f,  0.5f),
+            };
+            */
+            return CoordinatesOfCube;
 
         }
 
